@@ -10,8 +10,15 @@ public class KnifeState : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D coll) {
         if (coll.tag == "Knife") return;
+    }
 
-        knifeProvider.Stop();
+    public void Hide(float duration) {
+        StartCoroutine(PlayHide(duration));
+    }
+
+    IEnumerator PlayHide(float duration) {
+        yield return new WaitForSeconds(duration);
+
         gameObject.SetActive(false);
     }
 }
