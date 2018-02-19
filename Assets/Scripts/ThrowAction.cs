@@ -16,4 +16,8 @@ public class ThrowAction : MonoBehaviour {
             knifeManager.Throw();
         }
     }
+
+    public void Remove() {
+        this.enabled = false;
+    }
 }

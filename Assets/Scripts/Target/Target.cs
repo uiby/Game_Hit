@@ -23,6 +23,7 @@ public class Target : MonoBehaviour {
         timer = 0;
 
         targetProvider.PlayHitEffect((HitResultType)Mathf.Clamp(comboCount, 0, 2));
+        targetProvider.DecreaseRequireKnife();
         comboCount++;
         coll.GetComponent<KnifeProvider>().HitTarget();
     }

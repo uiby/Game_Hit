@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
 public class TextParts : GuiParts {
+    [SerializeField] bool hideOnAwake = true;
     Text text;
     float initFontSize;
 
@@ -12,7 +13,7 @@ public class TextParts : GuiParts {
         base.Awake();
         text = GetComponent<Text>();
         initFontSize = text.fontSize;
-        HideText();
+        if (hideOnAwake) HideText();
     }
 
     public void ChangeText(string str) {
